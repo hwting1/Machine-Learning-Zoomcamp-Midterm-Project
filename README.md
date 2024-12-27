@@ -17,20 +17,21 @@ The dataset contains a subset of DoorDash deliveries from early 2015, including 
    ```
 
 2. **Preliminary Analysis**:
-   Explore the preliminary work in `notebook.ipynb`, which includes:
+   Preliminary exploration work is in `notebook.ipynb`, which includes:
 
    - **Data Cleaning & EDA**:
-      - Cleaned the dataset and visualized distributions using `seaborn`.
-      - Analyzed linear correlations between numeric features and the target variable via a correlation matrix.
+      - Check the number of missing values in each column and clean the dataset.
+      - Visualize feature distributions using `seaborn`.
+      - Analyze linear correlations between numeric features and the target variable.
 
-   - **Feature Engineering & Modeling**:
-      - Categorical variables encoded with `TargetEncoder` (`category_encoders` library).
-      - Trained and evaluated Random Forest and XGBoost models.
-      - Hyperparameter tuning using `Pipeline` and `GridSearchCV` from `scikit-learn`.
-      - Results showed that **XGBoost** outperformed Random Forest with lower prediction error (measured by mean absolute error).
+   - **Feature Engineering & Modeling & Hyperparameter Tuning**:
+      - Categorical variables are encoded with `TargetEncoder` (`category_encoders` library).
+      - Train and evaluate Random Forest and XGBoost models.
+      - Use `Pipeline` and `GridSearchCV` from `scikit-learn` for hyperparameter tuning.
+      - Results show that **XGBoost** outperformed Random Forest with lower prediction error (measured by mean absolute error).
 
 3. **Model Training**:
-   Train the final XGBoost model with optimal hyperparameters and save the pipeline:
+   Train the final XGBoost model using the optimal hyperparameters obtained from grid search and save the complete pipeline for inference:
 
    ```bash
    python train.py
